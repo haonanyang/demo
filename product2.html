@@ -1,0 +1,47 @@
+<html>
+<meta charset="utf8">
+<head>
+<title>product</title>
+<script language="javascript">
+function changeImage()
+{
+	var a=document.getElementById("game").selectedIndex;//获取下拉列表框中的选择项
+	document.getElementById("show").src=document.getElementById("game").options[a].value;//将图像更改为对应选择项
+}
+</script>
+</head>
+<body>
+<div align="center">
+<form>
+<select id="game" onChange="changeImage()">
+<option value="img/h3.png">--海鲜水产--</option>
+<option value="img/鱼类.png">鱼类</option>
+<option value="img/虾类.png">虾类</option>
+<option value="img/贝类.png">贝类</option>
+<option value="img/蟹类.png">蟹类</option>
+</select>
+</form>
+</div>
+<p align="center">
+<img src="img/h3.png" id="show">
+</p>
+<script language="javascript">
+function changeImage1()
+{
+	var b=document.getElementById("game1").selectedIndex;//获取下拉列表框中的选择项
+	document.getElementById("show1").src=document.getElementById("game1").options[b].value;//将图像更改为对应选择项
+}
+</script>
+<div align="center">
+<form>
+<select id="game1" onChange="changeImage1()">
+<option value="img/h2.png">--干货--</option>
+<option value="img/h1.png">海鲜干货</option>
+</select>
+</form>
+</div>
+<p align="center">
+<img src="img/h2.png" id="show1">
+</p>
+</body>
+</html>

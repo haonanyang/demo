@@ -1,0 +1,49 @@
+<html>
+<meta charset="utf8">
+<head>
+<title>product</title>
+<script language="javascript">
+function changeImage()
+{
+	var a=document.getElementById("game").selectedIndex;//获取下拉列表框中的选择项
+	document.getElementById("show").src=document.getElementById("game").options[a].value;//将图像更改为对应选择项
+}
+</script>
+</head>
+<body>
+<div align="center">
+<form>
+<select id="game" onChange="changeImage()">
+<option value="img/m.png">--糕点--</option>
+<option value="img/面包.png">面包</option>
+<option value="img/蛋糕.png">蛋糕</option>
+<option value="img/糕点.png">甜点</option>
+</select>
+</form>
+</div>
+<p align="center">
+<img src="img/m.png" id="show">
+</p>
+<script language="javascript">
+function changeImage1()
+{
+	var b=document.getElementById("game1").selectedIndex;//获取下拉列表框中的选择项
+	document.getElementById("show1").src=document.getElementById("game1").options[b].value;//将图像更改为对应选择项
+}
+</script>
+<div align="center">
+<form>
+<select id="game1" onChange="changeImage1()">
+<option value="img/n.png">--乳品--</option>
+<option value="img/牛奶.png" selected>牛奶</option>
+<option value="img/奶酪.png">奶酪</option>
+<option value="img/黄油.png">黄油/奶油</option>
+<option value="img/酸奶.png">酸奶/乳酸饮料</option>
+</select>
+</form>
+</div>
+<p align="center">
+<img src="img/n.png" id="show1">
+</p>
+</body>
+</html>

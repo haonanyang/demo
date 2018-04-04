@@ -1,0 +1,50 @@
+<html>
+<meta charset="utf8">
+<head>
+<title>product</title>
+<script language="javascript">
+function changeImage()
+{
+	var a=document.getElementById("game").selectedIndex;//获取下拉列表框中的选择项
+	document.getElementById("show").src=document.getElementById("game").options[a].value;//将图像更改为对应选择项
+}
+</script>
+</head>
+<body>
+<div align="center">
+<form>
+<select id="game" onChange="changeImage()">
+<option value="img/r1.png">--新鲜肉类--</option>
+<option value="img/牛肉.png">牛肉</option>
+<option value="img/羊肉.png">羊肉</option>
+<option value="img/猪肉.png">猪肉</option>
+<option value="img/肠类.png">肠类</option>
+<option value="img/肉制品.png">肉制品</option>
+</select>
+</form>
+</div>
+<p align="center">
+<img src="img/r1.png" id="show">
+</p>
+<script language="javascript">
+function changeImage1()
+{
+	var b=document.getElementById("game1").selectedIndex;//获取下拉列表框中的选择项
+	document.getElementById("show1").src=document.getElementById("game1").options[b].value;//将图像更改为对应选择项
+}
+</script>
+<div align="center">
+<form>
+<select id="game1" onChange="changeImage1()">
+<option value="img/d1.png">--新鲜蛋品--</option>
+<option value="img/鸡蛋.png">鸡蛋</option>
+<option value="img/鸭蛋.png">鸭蛋</option>
+<option value="img/特色禽类蛋品.png">特色禽类蛋品</option>
+</select>
+</form>
+</div>
+<p align="center">
+<img src="img/d1.png" id="show1">
+</p>
+</body>
+</html>

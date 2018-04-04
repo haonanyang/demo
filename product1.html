@@ -1,0 +1,53 @@
+<html>
+<meta charset="utf8">
+<head>
+<title>product</title>
+<script language="javascript">
+function changeImage()
+{
+	var a=document.getElementById("game").selectedIndex;//获取下拉列表框中的选择项
+	document.getElementById("show").src=document.getElementById("game").options[a].value;//将图像更改为对应选择项
+}
+</script>
+</head>
+<body>
+<div align="center">
+<form>
+<select id="game" onChange="changeImage()">
+<option value="img/a.png">--水果--</option>
+<option value="img/时令水果.png">时令水果</option>
+<option value="img/热带水果.png">热带水果</option>
+<option value="img/原箱水果.png">原箱水果</option>
+</select>
+</form>
+</div>
+<p align="center">
+<img src="img/a.png" id="show">
+</p>
+<script language="javascript">
+function changeImage1()
+{
+	var b=document.getElementById("game1").selectedIndex;//获取下拉列表框中的选择项
+	document.getElementById("show1").src=document.getElementById("game1").options[b].value;//将图像更改为对应选择项
+}
+</script>
+<div align="center">
+<form>
+<select id="game1" onChange="changeImage1()">
+<option value="img/b.png">--蔬菜--</option>
+<option value="img/叶茎类.png" selected>叶茎类蔬菜</option>
+<option value="img/根茎类.png">根茎类蔬菜</option>
+<option value="img/菌菇类.png">菌菇类蔬菜</option>
+<option value="img/豆制品.png">豆制品</option>
+<option value="img/其他蔬菜1.png">葱蒜类蔬菜</option>
+<option value="img/其他蔬菜2.png">茄果、瓜果类蔬菜</option>
+<option value="img/其他蔬菜3.png">花菜豆类蔬菜</option>
+<option value="img/其他蔬菜4.png">冷冻类蔬菜</option>
+</select>
+</form>
+</div>
+<p align="center">
+<img src="img/b.png" id="show1">
+</p>
+</body>
+</html>
