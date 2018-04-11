@@ -1,0 +1,44 @@
+body,div,p,ul,li,ol,h1,h2,h3,h4,h5,h6,form,input,dl,dd,dt{margin: 0;padding: 0;font-size: 12px;} 
+a{text-decoration: none;}
+em{font-style:normal ;}
+i{font-style: normal;}
+
+/*main*/
+#main{width: 1254px;height: 120px;}
+#main .main-top{width: 1200px;height: 20px;padding: 20px 0;margin: 0 auto;}
+#main .main-top ul li a{color: #333333;}
+#main .main-top ul>li{float: left;list-style: none;height: 20px;line-height: 20px;position: relative;margin-right: 10px;}
+#main .main-top .down{border: 1px #cccccc solid;width: 100px;}
+#main .main-top ul li ol{width: 240px;height: 20px;position: absolute;top:30px;display: none;}
+#main .main-top ul li ol li{float: left;list-style: none;padding:  0 10px;}
+
+#main .main-middle{width: 1200px;height: 54px;margin: 0 auto;}
+
+/*contant*/
+#contant{width: 1200px;height: 1200px;margin: 0 auto;}
+/*#contant .contant-top{width: 1200px;height: 800px;padding: 20px 0;margin: 0 auto;}*/
+/*#contant .contant-top {width: 1200px;}*/
+#contant .contant-top {width: 290px;height: 380px;background: #FFFFFF;float: left;margin-right:10px;margin-top: 10px;}
+#contant .contant-top:hover{width: 288px;height: 378px;border: 1px solid #999999;}
+#contant .contant-top .cart{padding-left: 40px;}
+#contant .contant-top  img{width: 288px;height: 268px;}
+#contant .contant-top  em{font-size: 18px;color: #a6155e;}
+#contant .contant-top  .bt-wrap{width: 14px;height: 28px;float: left;margin-right: 10px;}
+/*#contant .contant-top ul li .bt-wrap input{float: left;}*/
+#contant .contant-top  p{}
+#contant .contant-top  i{color: #A6155E;display: block;height: 14px;line-height: 14px;}
+#contant .contant-top  .join-cart{height: 30px;margin-top: 10px;}
+#contant .contant-top .cart .join-cart .bt-wrap .iconfont{width:17px;height:17px;font-size:12px ;}
+#contant .contant-top  .join-cart .shop-cart{width: 100px;height: 25px;line-height:25px;font-size: 16px;display: block;float: left;margin-top:5px;padding: 0px 10px;color: #A6155E;border: 1px solid #666666;cursor: pointer;}
+#contant .contant-top   .join-cart input{float: left;}
+
+
+/*遮罩层*/
+/*#mask{width: 100%;height:100%;position: absolute;z-index: 1000;background: #9F9F9F;left: 0;top: 0;}*/
+
+
+
+
+
+
+

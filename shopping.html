@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.1.1.js" ></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/template.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+		<script src="js/dome.js"></script>
+		<!--<script type="text/javascript" src="js/shopping.js" ></script>-->
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/shop.css" />
+	</head>
+	<body>
+		<!--
+        	作者：offline
+        	时间：2016-11-12
+        	描述：头部公共样式
+        -->
+		 <div class="wrap-wrap">
+    	
+   		</div>
+        <script>
+        	$(".wrap-wrap").load("header.html");
+        </script>
+        <!--
+        	作者：offline
+        	时间：2016-11-15
+        	描述：shopping-main
+        -->
+        
+        <div id="shop-main">
+        	<div class="shop-main-top">
+        		<div class="shop-address">
+        			<div style="float: right;">
+        				<i>送货至:</i> <span>北京市北京市东城区</span>
+        			</div>
+        			
+        		</div>
+        		<div class="shop-title">
+        			<div class="s-line1">
+        				<input type="checkbox" checked="checked" />
+        				全选
+        				<span>商品名称</span>
+        			</div>
+        			<div class="s-line2">
+        				单价
+        			</div>
+        			<div class="s-line3">
+        				数量
+        			</div>
+        			<div class="s-line4">
+        				合计
+        			</div>
+        			<div class="s-line5">
+        				操作
+        			</div>
+        		</div>
+        		<div class="shop-log">
+        			<input type="checkbox" checked="checked" />
+        			生鲜
+        		</div>
+        	</div>
+        	<div id="shop-main-middle">
+        		
+        	</div>	
+        		
+		        		<!--<div class="one01">
+		        			<div class="s-checkbox">
+		        				<input type="checkbox" checked="checked" />
+		        			</div>
+		        			<div class="line-01">
+		        				<img src="img/deteil-1.jpg" />
+		        				<p>乐客黑城堡起泡葡萄酒<br />
+		        				Le Case Helloween Spar</p>
+		        			</div>
+		        			<div class="line-02">
+		        				￥99.00
+		        			</div>
+		        			<div class="line-03">
+		        				<input type="button" class="bt-down iconfont" value="&#xe62a;"/>
+		        				<input type="text" value="1" class="oro-num" />
+		        				<input type="button" class="bt-up iconfont" value="&#x3465;"/>
+		        				
+		        			</div>
+		        			<div class="line-04">
+		        				199.00
+		        			</div>
+		        			<div class="line-05">
+		        				<a href="#" class="del">删除</a>
+		        			</div>
+		        		</div>-->
+		        <script type="text/html" id="shopping">
+		        		<div class="one01">
+		        			<div class="s-checkbox">
+		        				<input type="checkbox" checked="checked" />
+		        			</div>
+		        			<div class="line-01">
+		        				<img src="{{imgsrc[0]}}" />
+		        				<p>{{name}}<br />
+		        				{{engname}}</p>
+		        			</div>
+		        			<div class="line-02">
+		        				{{price}}
+		        			</div>
+		        			<div class="line-03">
+		        				<input type="button" class="bt-down iconfont" proid={{proid}} value="&#xe62a;"/>
+		        				<input type="text" value="{{count}}" class="pro-num" />
+		        				<input type="button" class="bt-up iconfont" proid={{proid}} value="&#x3465;"/>
+		        				
+		        			</div>
+		        			<div class="line-04">
+		        				{{smallsum}}
+		        			</div>
+		        			<div class="line-05">
+		        				<a href="#" class="del" proid={{proid}}>删除</a>
+		        			</div>
+		        		</div>
+		        	
+		        </script>
+        	
+        	<div id="credit">
+        		<div class="up-left">
+        			<input type="checkbox" checked="checked" />
+        			<a href="javascript:void(0)">全选</a>
+        			<a href="javascript:void(0)" class="delall" >删除全部商品</a>
+        		</div>
+        		<div class="up-right">
+        			<em>商品数量：<i class="num-total">0</i></em>
+        			<span>商品总价（不含运费）：<b class="bigsum">￥0.00</b></span>
+        			<a href="javascript:void(0)">去结算</a>
+        			
+        		</div>
+        	</div>
+        </div>
+        <script type="text/javascript">
+        total3();
+		function total3(){
+			$("#top-menu-wrap .shop-num").html(parseInt($.cookie("total")));
+			$("#header .total").html(parseInt($.cookie("total")));
+			
+		}
+        main();
+        function main(){
+        	var html="";
+        	var count;
+        	var str=$.cookie("cart")?decodeURIComponent($.cookie("cart")):"";
+        	console.log(str);
+        	if(str.length>0){
+        		var arr=str.split("||");
+        			$.ajax({
+        				type:"get",
+        				url:"json/detail-page.json",
+        				async:true,
+        				success:function(data){
+        					var bignum=0;
+        					$.each(data, function() {
+        						var that=this;
+        						for(var i=0;i<arr.length;i++){
+        							var obj=JSON.parse(arr[i]);
+        							that.count=obj.count;
+        							that.smallsum=obj.count*obj.price;
+        							if(that.id==obj.id){
+//      								alert(1)var
+										//给加减按钮和删除加id判断属性
+										that.proid=that.id;
+										html += template("shopping",that);
+										$("#shop-main-middle").html(html);
+										bignum=bignum+that.smallsum;
+//										$(".pro-num").val(count);
+										var total;
+										var num;
+										total1(total);
+										total2(total);
+
+
+
+
+
+
+
+										
+										$(".bt-down").on("click",function(){
+											total=0;
+											var pId=$(this).attr("proid");
+											num=$(this).parent().find(".pro-num").val();
+											num--;
+											if(num==0){
+												alert("商品数量不能小于1")
+												num=1;
+											}
+											var price=parseInt($(this).parent().parent().find(".line-02").html());
+											var smallsum=num*price;
+											$(this).parent().parent().find(".line-04").html(smallsum)
+											$(this).parent().find(".pro-num").val(num);
+											setcookie(num,pId);
+											total1(total);
+											total2(total);
+											total3();
+										})
+										$(".bt-up").on("click",function(){
+											total=0;
+											var pId=$(this).attr("proid");
+									//		console.log(pId)
+											num=$(this).parent().find(".pro-num").val();
+											num++;
+											var price=parseInt($(this).parent().parent().find(".line-02").html());
+											var smallsum=num*price;
+											$(this).parent().parent().find(".line-04").html(smallsum)
+											$(this).parent().find(".pro-num").val(num);
+											setcookie(num,pId);
+											total1(total);
+											total2(total);
+											total3();
+										});
+										$(".pro-num").blur(function(){
+											
+										})
+										//总计封装
+										function total2(total){
+		
+											$(".line-04").each(function(){
+												total=total+parseInt($(this).html());
+											});
+											$(".bigsum").html(total)
+										}
+										//小计封装
+										function total1(total){
+											total=0;
+											$(".pro-num").each(function(){
+												total=total+parseInt($(this).val());
+											});
+//											console.log(total)
+											$(".num-total").html(total);
+											$.cookie("total",total,{expires:7,path:"/"});
+										}
+										//商品详情更改数量function
+										function setcookie(num,pId){
+											var str;
+											var oldStr=$.cookie("cart")?decodeURIComponent($.cookie("cart")):"";
+											if(oldStr.length>0){
+												var oldArr=oldStr.split("||");
+												for(var i=0;i<oldArr.length;i++){
+													var oldObj=JSON.parse(oldArr[i]);
+													if(oldObj.id==pId){
+														oldObj.count=num;
+														oldArr[i]=JSON.stringify(oldObj);
+														str=oldArr.join("||");
+														break;
+													}
+												}	
+											}
+//											console.log(str);
+											$.cookie("cart",encodeURIComponent(str),{expires:7,path:"/"})	
+										}
+										//删除
+										$(".del").on("click",function(){
+											var pId=$(this).attr("proid");
+											var str=$.cookie("cart")?decodeURIComponent($.cookie("cart")):"";
+											var arr=str.split("||");
+											for(var i=0;i<arr.length;i++){
+												var obj=JSON.parse(arr[i]);
+												if(pId==obj.id){
+													arr.splice(i,1)
+												}
+//												arr[i]=JSON.stringify(obj);
+											}
+//											console.log(arr.length);
+//											console.log(arr);
+											
+											
+											str=arr.join("||");
+//											console.log(str);
+											$.cookie("cart",encodeURIComponent(str),{expires:7,path:"/"})
+											total3();
+											main();
+										})
+										$(".delall").on("click",function(){
+											var str=$.cookie("cart")?decodeURIComponent($.cookie("cart")):"";
+											str="";
+//											var total=0;
+											$.cookie("cart",encodeURIComponent(str),{expires:7,path:"/"});
+											$.cookie("total",encodeURIComponent(0),{expires:7,path:"/"});
+											
+											total3();
+											main();
+										})
+										
+//										function total3(){
+//											$("#top-menu-wrap .shop-num").html(parseInt($.cookie("total")));
+											$(".totalNum b").html(parseInt($.cookie("total")));
+//											
+//										}
+        							}
+        							
+        						}
+        						var total=parseInt($.cookie("total")||0);
+	        					$(".num-total").html(total);
+	        					$(".bigsum").html(bignum)
+        					});
+        					
+//      					$(".pro-num").each(function(){
+//      						
+//      					})
+//      					console.log(data);
+//      					if(obj.id==data.id){
+//      						alert(1);
+//      					}''
+        				}
+        			});
+        		
+        	}else{
+        		html = template("shopping","");
+				$("#shop-main-middle").html(html);
+				$(".num-total").html(0);
+	        	$(".bigsum").html(0)
+        	}
+        }
+        	
+        </script>
+       
+        <!--
+        	作者：offline
+        	时间：2016-11-12
+        	描述：尾部公共样式
+        -->
+        <div class="footer-wrap">
+        	
+        </div>
+        <script>
+        	$(".footer-wrap").load("footer.html");
+        </script>
+	</body>
+</html>

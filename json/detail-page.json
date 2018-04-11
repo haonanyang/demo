@@ -1,0 +1,109 @@
+{
+  "001":{"id":"001",
+    "type":"wine",
+    "price":"19.80",
+    "name":"原膳深海大虾200g  虾类 海鲜水产烧烤食材",
+    "count":"1",
+    "imgsrc":["https://img.alicdn.com/bao/uploaded/i4/1910146537/TB1oKSeaeuSBuNjy1XcXXcYjFXa_!!0-item_pic.jpg_480x480q50.jpg"],
+    "introduce":" 海鲜水产 健身辅食。"
+  },
+  "002":{"id":"002",
+    "type":"wine",
+    "price":"228.00",
+    "name":"原膳南美白虾仁(中)250g/包",
+    "count":"1",
+    "imgsrc":"https://img.alicdn.com/bao/uploaded/i4/1910146537/TB1oBgJXhuTBuNkHFNRXXc9qpXa_!!0-item_pic.jpg_480x480q50.jpg",
+    "introduce":"海鲜水产 健身辅食 水晶虾仁 冷冻。"
+  },
+  "003":{"id":"003",
+    "type":"wine",
+    "price":"199.00",
+    "name":"越南巴沙鱼柳280g",
+    "count":"1",
+    "imgsrc":"https://img.alicdn.com/bao/uploaded/i4/1910146537/TB1oBgJXhuTBuNkHFNRXXc9qpXa_!!0-item_pic.jpg_480x480q50.jpg",
+    "introduce":"去皮进口水产 海鲜鱼片 鱼肉 烧烤食材"
+  },
+  "004":{"id":"004",
+    "type":"wine",
+    "price":"198.00",
+    "name":"美威轮切三文鱼400g(2-3片)",
+    "count":"1",
+    "imgsrc":["https://img.alicdn.com/bao/uploaded/i4/1910146537/TB1oBgJXhuTBuNkHFNRXXc9qpXa_!!0-item_pic.jpg_480x480q50.jpg"],
+    "introduce":"去皮进口水产 海鲜鱼片 鱼肉 烧烤食材"
+
+  },
+  "005":{"id":"005",
+    "type":"wine",
+    "price":"118.00",
+    "name":"原膳深海大虾200g  虾类 海鲜水产烧烤食材",
+    "count":"1",
+    "imgsrc":["https://img.alicdn.com/bao/uploaded/i2/1910146537/TB1U8KZXH9YBuNjy0FgXXcxcXXa_!!0-item_pic.jpg_480x480q50.jpg"],
+    "introduce":"适合中国用户口味及全场景"
+
+  },
+  "006":{"id":"006",
+    "type":"wine",
+    "price":"69.00",
+    "name":"美威轮切三文鱼400g(2-3片)",
+    "count":"1",
+    "imgsrc":["https://img.alicdn.com/bao/uploaded/i4/1910146537/TB1oKSeaeuSBuNjy1XcXXcYjFXa_!!0-item_pic.jpg_480x480q50.jpg"],
+    "introduce":"智利进口 海鲜水产"
+
+  },
+  "007":{"id":"007",
+    "type":"wine",
+    "price":"39.00",
+    "name":"克洛斯特甜白葡萄酒",
+    "count":"1",
+    "imgsrc":["https://img.alicdn.com/bao/uploaded/i2/1910146537/TB1U8KZXH9YBuNjy0FgXXcxcXXa_!!0-item_pic.jpg_480x480q50.jpg"],
+    "introduce":"女士最爱 达人推荐"
+
+  },
+  "008":{"id":"008",
+    "type":"wine",
+    "price":"59.00",
+    "name":"美威轮切三文鱼400g(2-3片)",
+    "count":"1",
+    "imgsrc":["https://img.alicdn.com/bao/uploaded/i4/1910146537/TB1oKSeaeuSBuNjy1XcXXcYjFXa_!!0-item_pic.jpg_480x480q50.jpg"],
+    "introduce":"意大利甜麝香起泡酒"
+
+  },
+  "009":{"id":"009",
+    "type":"wine",
+    "price":"59.00",
+    "name":"意大利 霓系甜型葡萄酒",
+    "count":"1",
+    "imgsrc":["https://img.alicdn.com/bao/uploaded/i2/1910146537/TB1U8KZXH9YBuNjy0FgXXcxcXXa_!!0-item_pic.jpg_480x480q50.jpg"],
+    "introduce":"意大利甜麝香起泡酒"
+
+  },
+  "010":{"id":"010",
+    "type":"wine",
+    "price":"59.00",
+    "name":"意大利 霓系甜型葡萄酒",
+    "count":"1",
+    "imgsrc":["https://img.alicdn.com/bao/uploaded/i2/1910146537/TB1U8KZXH9YBuNjy0FgXXcxcXXa_!!0-item_pic.jpg_480x480q50.jpg"],
+    "introduce":"智利进口 海鲜水产"
+
+  },
+  "011":{"id":"011",
+    "type":"wine",
+    "price":"59.00",
+    "name":"美威轮切三文鱼400g(2-3片)",
+    "count":"1",
+    "imgsrc":["https://img.alicdn.com/bao/uploaded/i4/1910146537/TB1oKSeaeuSBuNjy1XcXXcYjFXa_!!0-item_pic.jpg_480x480q50.jpg"],
+    "introduce":"意大利甜麝香起泡酒"
+
+  },
+  "012":{"id":"012",
+    "type":"wine",
+    "price":"59.00",
+    "name":"美威轮切三文鱼400g(2-3片)",
+    "count":"1",
+    "imgsrc":["https://img.alicdn.com/bao/uploaded/i2/1910146537/TB1U8KZXH9YBuNjy0FgXXcxcXXa_!!0-item_pic.jpg_480x480q50.jpg"],
+    "introduce":"智利进口 海鲜水产"
+
+  }
+
+}
+

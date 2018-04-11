@@ -1,0 +1,91 @@
+body,div,p,ul,li,ol,h1,h2,h3,h4,h5,h6,form,input,dl,dd,dt{margin: 0;padding: 0;font-size: 12px;} 
+a{text-decoration: none;}
+em{font-style:normal ;}
+
+/*wrap*/
+#wrap{width: 1254px;height: 38px;border-bottom: 1px solid #999999;}
+#wrap .wraplist{width: 1200px;height: 38px;margin: 0 auto;}
+#wrap .wraplist li a{color:#999999;}
+#wrap .wraplist li a:hover{color:#ae1219 ;}
+#wrap .wraplist li{float: left;list-style: none;margin-top:10px;color:#999999;}
+#wrap .wraplist #loginMess span{margin-right: 15px;font-weight: 600;}
+#wrap .wraplist .app{margin-right: 450px;}
+#wrap .wraplist .menu{width: 84px;margin: 10px 10px;text-align: center;position: relative;cursor: pointer;}
+#wrap .wraplist .menu em{background: url(../img/bg1.jpg) no-repeat right;width: 75px;height: 16px;display: block;}
+#wrap .wraplist .menu em a{display: block;width: 70px;}
+#wrap .wraplist .menu ul{height: 0;padding-left: 15px;position: absolute;height:40px;background: #FFFFFF;display: none;}
+#wrap .wraplist .menu ul li{clear: left;height: 18px;}
+
+
+
+
+
+/*header*/
+#header{width: 1254px;height: 163px;border-bottom: 1px solid #AE1219;}
+#header-top{width: 1200px;height: 130px;margin: 0 auto;}
+#header-top .logo{width:160px ;height: 75px;padding-top: 24px ;float: left;}
+#header-top .search{width: 530px;height: 50px;float: left;margin:40px 0 0 175px;}
+#header-top input{height: 27px;border: 1px solid #AE1219;float: left;margin-bottom: 5px;}
+#header-top .txt1{width:468px;}
+#header-top .bt1{width: 60px;background: #AE1219;height: 29px;color: #ffffff;}
+#header-top .search span{color: #999999;}
+/*购物车*/
+#header-top .shoppingcart{float: right;width:150px;height: 30px;margin-top: 40px;cursor: pointer;}
+#header-top .shoppingcart p{background: #AE1219;width: 120px;float: left;height: 30px;}
+#header-top .shoppingcart p img{float: left;}
+#header-top .shoppingcart p span{height: 30px;line-height:30px ;color: #FFFFFF;}
+#header-top .shoppingcart em{background: #FFFFFF url(../img/bg2.jpg) no-repeat right;width: 28px;display: block;
+							line-height:30px;float: left;height: 28px;text-align: center;border: 1px #AE1219 solid;}
+#header-bottom{width: 1200px;height:33px ;margin: 0 auto;}
+#header-bottom p{width:166px;height: 33px;background: url(../img/bg3.jpg);text-align: center;line-height: 33px;color: #FFFFFF;float: left;cursor: pointer;}
+#header-bottom ul li{list-style: none;float: left;height: 30px;line-height: 30px;margin:0 15px ;}
+#header-bottom ul li a{color: #444444;}
+#header-bottom ul li a:hover{border-bottom:3px solid #AE1219 ;height: 30px;display: block;}
+
+
+
+
+
+/*二级菜单*/
+
+/*footer*/
+#footer{width:95%;height: 445px;margin: 0 auto;}
+#footer .footer_top{width: 1200px;height: 135px;margin: 0 auto;}
+#footer .footer_top dl{width: 280px;height: 50px;float: left;margin-top: 30px;line-height: 60px;margin-left:20px ;}
+#footer .footer_top dl dt{width: 50px;height: 50px;background: url(../img/foot1.gif) no-repeat;float: left;}
+#footer .footer_top dl .s2{background: url(../img/foot1.gif) no-repeat 0px -55px;}
+#footer .footer_top dl .s3{background: url(../img/foot1.gif) no-repeat 0px -110px;}
+#footer .footer_top dl .s4{background: url(../img/foot1.gif) no-repeat 0px -165px;}
+#footer .footer_top dl dd b{font-size: 16px;color: #666666;padding-left: 10px;}
+#footer .footer_middle{width: 1200px;height: 195px;padding-top: 20px;margin: 0 auto;}
+#footer .footer_middle dl{width: 145px;height: 106px;float: left;}
+#footer .footer_middle dl dt{height: 34px;font-size: 18px;}
+#footer .footer_middle dl dd{height: 16px;line-height: 16px;}
+#footer .footer_middle dl dd a{color: #000000;}
+#footer .footer_middle dl .slogen-app{width: 80px;height: 80px;float: left;text-align: center;margin-left: 10px;}
+#footer .footer_middle dl .slogen-app img{width: 80px;height: 80px;}
+#footer .footer_bottom{width:1227px;height: 75px;background: #000000;padding-top: 20px;color: #FFFFFF;margin-left: -35px;padding-left: 27px;}
+#footer .footer_bottom .mn_left{width: 970px;float: left;line-height: 18px;}
+#footer .footer_bottom .mn_left a{color: #FFFFFF;}
+#footer .footer_bottom .mn_right{width: 230px;float: right;line-height:20px;padding-right: 20px;}
+
+
+
+/*头部固定导航*/
+#top-menu-wrap{width: 100%;background: #eeeeee;height: 50px;position: fixed;top: 0;left: 0; display: none;z-index: 10000;}
+#top-menu{width: 1200px;height:50px;margin: 0 auto;}
+#top-menu h3{float: left;padding-top: 5px;width: 150px;height: 50px;}
+#top-menu .fix_nav{float: left;line-height: 50px;width: 380px;height: 50px;}
+#top-menu .fix_nav a{display: block;float: left;padding-left: 30px;color: #000000;}
+#top-menu .fix_nav a:hover{color: #A21459;}
+#top-menu .fix_check{line-height: 50px;width: 482px;height: 50px;float: left;padding-left: 30px;padding-top: 8px;}
+#top-menu .fix_check input{width: 408px;height:32px;float: left;}
+#top-menu .fix_check a{display: block;width: 70px;height: 36px;float: left;line-height: 32px;text-align: center;background: #a40c59;font-size: 16px;color: #FFFFFF;}
+#top-menu .shopping-cart{width: 148px;float: right;height: 29px;background: #FFFFFF;line-height: 29px;margin-top:14px ;}
+#top-menu .shopping-cart p{width: 110px;float: left;}
+#top-menu .shopping-cart img{float: left;}
+
+
+/*右侧功能栏*/
+#taskbar{width: 30px;height: 100%;background: #a92b69;position: fixed;right: 0;top: 0;z-index: 10000;}
+#taskbar p{width: 30px;height: 30px;position: absolute;right: 0;bottom: 0;cursor: pointer;}

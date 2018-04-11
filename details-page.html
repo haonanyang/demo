@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.1.1.js"></script>
+		<!--<link rel="stylesheet" href="css/base.css" />-->
+    <link rel="stylesheet" href="./css/index.css">
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/details-page.css" />
+    <script type="text/javascript" src="js/dome.js" ></script>
+    <script src="js/template.js"></script>
+		<script src="js/jquery.cookie.js"></script>
+	</head>
+	<body>
+		<!--
+        	作者：offline
+        	时间：2016-11-12
+        	描述：头部公共样式
+        -->
+        <div class="wrap-wrap">
+    	
+   		</div>
+        <script>
+        	$(".wrap-wrap").load("header.html");
+        </script>
+        <!--
+        	作者：offline
+        	时间：2016-11-12
+        	描述：主要内容
+        -->
+        <div id="detail-main">
+        	<div class="detail-main-top">
+        		<p>
+        			<a href="index.html">首页</a>  >
+        		
+	        		<a href="prolist.html">鲜虾</a>  >
+	        		<a href=""></a>
+        		</p>
+        	</div>
+        	<div class="detail-main-middle">
+        		
+        	</div>
+        	<script type="text/html" id="prolist">
+        		<!--<div class="detail-main-middle">-->
+	        		<div class="detail-pic">
+	        			<div class="large-pic">
+	        				<div class="pic-wrap">
+	        					{{each imgsrc as value i}}
+	        					<img src="{{value}}" />
+	        					{{/each}}
+	        				</div>
+	        				<div id="img-scroll"></div>
+	        				<div id="img-scroll-wrap"></div>
+		        				
+	        			</div>
+	        			<div id="large-large-pic">
+		        			{{each imgsrc as value i}}
+	        					<img src="{{value}}" />
+	        				{{/each}}
+		        		</div>
+	        			
+	        			<div class="small-pic">
+	        				<ul id="scroll-pic">
+	        					<div id="pp" class="pic-small-label">
+	        						{{each imgsrc as value i}}
+	        							<li><img src="{{value}}" /></li>
+	        						{{/each}}
+	        						
+	        					</div>
+	        				</ul>
+	        			</div>
+	        			<div id="switch-bt">
+	        				<div id="left-bt" class="iconfont">
+	        					&#xe608;
+	        				</div>
+	        				<div id="right-bt" class="iconfont">
+	        					&#xe663;
+	        				</div>
+	        			</div>
+	        		</div>
+	        		<div class="detail-text">
+	        			<div class="part-line1">
+	        				<h1>{{name}}</h1>
+	        				<h2>{{engname}}</h2>
+	        			</div>
+	        			<div class="part-line2">
+	        				<h3>{{introduce}}</h3>
+	        			</div>
+	        			<div class="part-line3">
+	        				<p>
+	        					<i>网酒价：</i>
+	        					<span id="price">
+	        						￥{{price}}
+	        					</span>
+	        					<b>
+	        						104条评论
+	        					</b>
+	        				</p>
+	        			</div>
+	        			
+	        			<div class="part-line4" id="address">
+	        				<div class="part-line4-left">
+	        					送货至：
+	        				</div>
+	        				<div class="part-line4-right">
+	        					<div class="tes">
+	        						<span>北京市北京市东城区</span>
+	        					</div>
+	        					<div class="addHot">
+	        						
+	        					</div>
+	        				</div>
+	        			</div>
+	        			<div class="part-line5">
+	        				<em>
+	        					由 网酒网 发货，并提供售后服务
+	        				</em>
+	        			</div>
+	        			<div class="part-line6">
+	        				支持分期购：乐乐花分期
+	        			</div>
+	        			<div class="part-line7">
+	        				<div class="join-cart">
+	        					<input type="text" value="{{count}}" id="pro-num" />
+	        					<div class="bt-wrap" >
+	        						<input type="button" value="&#x3465;" class="iconfont bt-up" />
+	        						<input type="button" value="&#xe62a;" class="iconfont bt-down" />
+	        					</div>
+	        					<span class="iconfont shop-cart" data-id="{{id}}">&#xe6e4;加入购物车</span>
+	        				</div>
+	        			</div>
+	        			<div class="part-line8">
+	        				保障：     品牌授权    保真"基金"  售后无忧
+	        			</div>
+	        				
+	        		</div>
+        		<!--</div>-->
+        	</script>
+        </div>
+        <script>
+//      $(function{
+			total2();
+			function total2(){
+				$("#top-menu-wrap .shop-num").html(parseInt($.cookie("total")));
+				$("#header .total").html(parseInt($.cookie("total")));
+				
+			}
+			var webId = window.location.search.replace(/\?/,"").split("=");
+			console.log(webId)
+			var pro_id = webId[1];
+			console.log(pro_id)
+			$.ajax({
+				type:"get",
+				url:"json/detail-page.json",
+				async:true,
+				success:function(data){
+
+					$.each(data,function(){
+                            //console.log(data)
+	        			if(this.id==pro_id){
+	        				var hotData = this;
+	        				console.log(hotData)
+//	        				hotData.proid=
+							var html = template("prolist",hotData);
+							$(".detail-main-middle").html(html);
+							
+							
+							
+							
+							
+							
+							var index=0;
+							var oList=document.getElementById("pp").children;
+//							console.log(oList.length)
+				        	$("#right-bt").on("click",function(){
+				        		var left=$("#pp").position().left;
+				        		if(left>=0){
+				        			$("#pp").stop(true,true)
+				        			
+				        		}else{
+				        			left=left+82;
+				        			$("#pp").stop(true,true).animate({
+				        				"left":left+"px"
+				        			})
+				        		}
+				        	})
+				        	$("#left-bt").on("click",function(){	
+				        		var left=$("#pp").position().left;
+				        		
+				        		if(left<=-(oList.length-4)*82){
+				        			$("#pp").stop(true,true)
+				        		}else{
+				        			left=left-82;
+				        			$("#pp").stop(true,true).animate({
+				        				"left":left+"px"
+				        			})
+				        		}
+				        	})
+				        	//获取所有的大大图片并给第一个加id=pic
+				        	var arrImg=$("#large-large-pic img");
+				        	arrImg[0].id="pic";
+				        	$("#pp li").click(function(){
+				        		index=$(this).index();
+				        		$(".pic-wrap").css("left",index*(-418)+"px");
+				//      		console.log($index);
+				//      		console.log($("#large-large-pic img")[$index])
+								var arrImg=$("#large-large-pic img");
+								arrImg.each(function(){
+									this.id="";
+								})
+								arrImg[index].id="pic";
+				        		
+				        	})
+				        	//放大镜效果
+				        	var oDiv2=document.getElementById("img-scroll")
+				        	var oDiv3=document.getElementById("img-scroll-wrap")
+				        	var oDiv4=document.getElementById("large-large-pic")
+				        	
+				        	$("#img-scroll-wrap").mousemove(function(e){
+				        		var oImg=document.getElementById("pic")
+				        		$("#large-large-pic").css("display","block");
+				        		$("#img-scroll").css("display","block");
+				        		
+				        		var eX=e.offsetX;
+				        		var eY=e.offsetY;
+				        		var left=e.offsetX-oDiv2.offsetWidth/2;
+								var top=e.offsetY-oDiv2.offsetHeight/2;
+								
+								left=Math.max(0,Math.min(left,oDiv3.offsetWidth-oDiv2.offsetWidth))
+								top=Math.max(0,Math.min(top,oDiv3.offsetHeight-oDiv2.offsetHeight))
+								$("#img-scroll").css("left",left+"px");
+				        		$("#img-scroll").css("top",top+"px")
+								var Dx=oImg.offsetWidth/oDiv3.offsetWidth*eX; 			
+								var Dy=oImg.offsetHeight/oDiv3.offsetHeight*eY;
+								var left=oDiv4.offsetWidth/2-Dx;
+								var top=oDiv4.offsetHeight/2-Dy;
+				        		left=Math.max(-418,Math.min(left,0))
+								top=Math.max(-418,Math.min(top,0))
+								oImg.style.left=left+"px";
+								oImg.style.top=top+"px";
+				        		
+				        	});
+				        	$("#img-scroll-wrap").mouseout(function(e){
+				        		$("#large-large-pic").css("display","none")
+				        		$("#img-scroll").css("display","none")
+				        		
+				        	})
+				        	
+				        	//商品数量加减及加入购物车
+				        	$(".bt-up").on("click",function(){
+				        		var count=$(this).parent().parent().find("#pro-num").val();
+				        		count++;
+				        		$(this).parent().parent().find("#pro-num").val(count);
+				        	})
+	        				$(".bt-down").on("click",function(){
+				        		var count=$(this).parent().parent().find("#pro-num").val();
+				        		count--;
+				        		if(count==0){
+				        			count=1;
+				        			alert("商品数量不能小于1个")
+				        		}
+				        		$(this).parent().parent().find("#pro-num").val(count);
+				        	})
+	        				$(".shop-cart").on("click",function(){
+	        					var count=parseInt($(this).parent().find("#pro-num").val());
+	        					
+	        					//判断是否有此商品
+								var isExit=false;
+								//获取商品页面显示数量
+//								var total=parseInt($(this).parent().find(".txt-num").val());
+								//获取id
+								var pId = $(this).attr("data-id");
+			//					console.log(pId)
+								//获取cookie
+								var oldStr=$.cookie("cart")?decodeURIComponent($.cookie("cart")):"";
+								//获取产品信息（对象模式）
+								var obj1=data[pId];
+								var price=obj1.price;
+			//					console.log(obj1.price)
+								//obj存取的是id和数量
+								var obj={
+									id:pId,
+									count:count,
+									price:price
+								}
+			//					console.log(obj);
+								//原来产品数量
+								var oldCound=parseInt(obj.count);
+								//赋值产品数量
+			//					obj.count=total;
+								//转换对象为str格式
+								var str=JSON.stringify(obj);
+								
+								if(oldStr.length>0){
+									var oldArr=oldStr.split("||");
+									for(var i=0;i<oldArr.length;i++){
+										var oldObj=JSON.parse(oldArr[i]);
+										if(oldObj.id==pId){
+											oldObj.count=parseInt(oldObj.count)+oldCound;
+											
+											isExit=true;
+											
+											oldArr[i]=JSON.stringify(oldObj);
+			//								console.log(str);
+											
+											str=oldArr.join("||");
+											break;
+										}
+									}	
+									if(!isExit){
+										str=oldStr+"||"+str;
+			//							console.log(str);
+									}
+								}
+			//					console.log(str);
+								$.cookie("cart",encodeURIComponent(str),{expires:7,path:"/"})
+								
+								
+			//					console.log(encodeURIComponent(str));
+			//					var num = obj[pId] || 0;
+								
+			//					obj[pId]=num+total;
+								
+				        		var total1=parseInt($.cookie("total")||0);
+								
+								
+								total1=parseInt(count)+total1;	
+								$.cookie("total",total1,{expires:7,path:"/"});
+								$(".totalNum b").html(parseInt($.cookie("total")));
+//								total2();
+				        	})
+				        			
+				        }
+			        })
+        		}	
+			});
+        	
+//      })
+        	
+        </script>
+        <!--
+        	作者：offline
+        	时间：2016-11-12
+        	描述：尾部公共样式
+        -->
+        <div class="footer-wrap">
+        	
+        </div>
+        <script>
+        	$(".footer-wrap").load("footer.html");
+        </script>
+	</body>
+</html>
